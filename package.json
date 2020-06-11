@@ -9,7 +9,7 @@
     "prebuild": "node webpack.config.prod.js",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d deploy"
+    "deploy": "gh-pages -d build"
   },
   "dev-server": {
     "contentBase": "./dist",
