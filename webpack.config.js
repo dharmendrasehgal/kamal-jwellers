@@ -1,7 +1,15 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-``
+const ModernizerWebpackPlugin = require("modernizr-webpack-plugin");
+
+//for modernizer configuration
+//var config = {
+//    'feature-detects': [
+//        'input','canvas', 'css/resize', 'webp'
+//    ]
+//};
+
 module.exports = {
     entry: './src/app.js',
     output: {
@@ -25,7 +33,7 @@ module.exports = {
                 use: [{loader: 'style-loader'},{loader: 'css-loader'}]
             },
             {
-                test: /\.(jpg|png|gif)$/,
+                test: /\.(jpg|png|gif|webp)$/,
                 use: {loader: 'file-loader'}
             },
     ]},
@@ -33,6 +41,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "Webpack Output!"
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new ModernizerWebpackPlugin(),
     ],
 };
