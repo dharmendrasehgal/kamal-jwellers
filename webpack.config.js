@@ -38,9 +38,9 @@ module.exports = {
             },
     ]},
     plugins: [
-        new HtmlWebpackPlugin({
-            title: "Webpack Output!"
-        }),
+//        new HtmlWebpackPlugin({
+//            title: "Webpack Output!"
+//        }),
         new CleanWebpackPlugin(),
         new ModernizerWebpackPlugin(),
     ],
